@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.carousel-images img,
+.carousel-videos video {
+    max-width: 70%; /* Adjust the width as needed */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the image/video */
+}
+
+.carousel-control {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+header {
+    background-color: #940e0e;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 2px solid #444;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.demo-image {
+    max-width: 80%; /* Adjust this percentage to scale the image */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 1rem;
+}
+
+#landing,
+#projects,
+#contact {
+    clear: both;
+    margin-top: 20px;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.project {
+    margin-top: 20px;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

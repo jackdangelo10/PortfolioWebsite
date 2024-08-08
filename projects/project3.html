@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Linux Scheduling Policy</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <h1>Custom Linux Scheduling Policy</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#demo">Description</a></li>
+                <li><a href="#details">Details</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="demo">
+            <h2>Description</h2>
+            <p>As part of my Operating Systems class, I developed a custom Linux scheduling policy, supported by extensive code modifications and testing. The new policy, named SCHED_RR2, is designed to enhance Linux’s existing real-time round-robin (SCHED_RR) scheduler by introducing a boost feature that allows real-time tasks to extend their time quantum by a factor of two. My primary contributions involved modifying key kernel files, adding new variables and system calls, and implementing the SCHED_RR2 policy.</p>
+            <p>To support this new policy, I added a <code>boost</code> variable and created a system call to set or modify this variable. The kernel modifications included extensive changes to various scheduling headers and core files to incorporate the new SCHED_RR2 policy. Additionally, I wrote user-level programs to test the new scheduler, contrasting its performance with the existing SCHED_RR policy. This project provided valuable hands-on experience in kernel development and real-time scheduling enhancements.</p>
+        </section>
+
+        <section id="details">
+            <h2>Details</h2>
+            <p>You can find the full project and source code on my <a href="https://github.com/yourusername/yourprojectrepo" target="_blank">GitHub repository</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Jack D'Angelo</p>
+    </footer>
+</body>
+</html>

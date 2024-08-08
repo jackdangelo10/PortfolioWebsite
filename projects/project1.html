@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled Video Game</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <h1>Untitled Video Game</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#description">Description</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="description">
+            <h2>Description</h2>
+            <p>My video game is a multiplayer strategy game inspired by titles such as Crusader Kings 2, RimWorld, and Civilization 5. It offers a rich blend of crafting, settlement building, exploration, politics, and questing. The game allows players to shape their world through strategic decisions and interactions. As players progress towards the end game, they gain access to powerful, console command-like abilities, such as creating custom NPCs, ultimately transforming into god-like figures within the game. This unique twist provides an exhilarating experience as players transition from humble beginnings to wielding immense power and influence over their virtual realms.</p>
+        </section>
+
+        <section id="randomized-world-map-generation">
+            <h2>Randomized World Map Generation</h2>
+            <p>The game features a sophisticated randomized world generation system, where each world is created using a unique seed, ensuring a distinct and immersive experience every time. Players can configure landmass size and frequency to tailor the environment to their preferences. Additionally, the game incorporates biomes tied to latitude, providing a layer of realism as different regions of the world exhibit varying climates and ecosystems. This dynamic world generation not only enhances replayability but also offers a diverse and authentic landscape for players to explore and conquer.</p>
+            <div class="carousel">
+                <button class="carousel-control prev">‹</button>
+                <div class="carousel-images">
+                    <!-- Place for images -->
+                    <img src="../images/world_map1.png" alt="Demo Image 1">
+                    <img src="../images/world_map2.png" alt="Demo Image 2">
+                    <img src="../images/world_map3.png" alt="Demo Image 2">
+                    <img src="../images/world_map4.png" alt="Demo Image 2">
+                    <img src="../images/world_map5.png" alt="Demo Image 2">
+                    <!-- Add more images as needed -->
+                </div>
+                <button class="carousel-control next">›</button>
+            </div>
+        </section>
+
+        <section id="world-map-camera">
+            <h2>World Map Camera</h2>
+            <p>The game's camera controls allow players to focus on specific parts of the map, providing detailed views of their settlements and activities. Additionally, the camera wrapping feature creates the illusion of a round world, enabling seamless circumnavigation and enhancing the immersive experience.</p>
+            <div class="carousel">
+                <button class="carousel-control prev">‹</button>
+                <div class="carousel-videos">
+                    <!-- Place for videos -->
+                    <video controls>
+                        <source src="../videos/world-map-camera1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video controls>
+                        <source src="../videos/world-map-camera2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <button class="carousel-control next">›</button>
+            </div>
+        </section>
+
+        <section id="world-map-editor">
+            <h2>World Map Editor</h2>
+            <p>The world map editor empowers players to modify randomly generated maps or start with a blank ocean map to create their own custom world. This feature provides flexibility and creativity, allowing players to design unique landscapes and tailor the game environment to their preferences.</p>
+            <div class="carousel">
+                <button class="carousel-control prev">‹</button>
+                <div class="carousel-videos">
+                    <!-- Place for videos -->
+                    <video controls>
+                        <source src="../videos/world-map-editor1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video controls>
+                        <source src="../videos/world-map-editor2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <button class="carousel-control next">›</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // JavaScript to handle carousel controls
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            const prevButton = carousel.querySelector('.prev');
+            const nextButton = carousel.querySelector('.next');
+            const images = carousel.querySelectorAll('img, video');
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                images.forEach((img, index) => {
+                    img.style.display = index === currentIndex ? 'block' : 'none';
+                });
+            }
+
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+                updateCarousel();
+            });
+
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+                updateCarousel();
+            });
+
+            updateCarousel();
+        });
+    </script>
+</body>
+</html>
+
