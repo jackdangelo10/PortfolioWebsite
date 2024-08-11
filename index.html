@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -12,41 +13,27 @@
         <nav>
             <ul>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="https://github.com/jackdangelo10">GitHub</a></li>
-                <li><a href="docs/Resume 2024.pdf">Resume</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                <li><a href="https://github.com/jackdangelo10"><i class="fab fa-github"></i> GitHub</a></li>
+                <li><a href="docs/Resume 2024.pdf"><i class="fa-solid fa-file"></i> Resume</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="landing">
-            <h2>About Me</h2>
-            <p>Welcome! 
-                Hello! I'm Jack D'Angelo, from Westchester, NY. I'm currently studying Computer Science and minoring in Mathematics at Georgetown University. My passion lies in video game design and development, where I enjoy harnessing creative problem-solving skills to create engaging and innovative experiences. I am currently working at Burbio, where I develop and implement creative solutions to efficiently scrape school district data. During the school year, I also work as a TA for Computer Science I and II and tutor new computer science students. Beyond my academic and professional pursuits, I love spending time in the great outdoors, particularly camping and backpacking. I also enjoy reading fiction and science fiction, which provides both entertainment and inspiration. 
-            </p>
+            <div class="about-me-content">
+                <h2>About Me</h2>
+                <p>
+                    I'm Jack D'Angelo from Westchester, NY. I'll be graduating from Georgetown University in December 2024 with a Bachelor of Science in Computer Science and a minor in Mathematics. I’m passionate about video game design and development, blending technology with creativity. Outside of my academic and technical pursuits, I enjoy reading, writing, exploring the outdoors, and staying active by going to the gym.
+                </p>
+            </div>
         </section>
+        
 
         <section id="projects">
             <h2>My Projects</h2>
-            <div class="project">
-                <h3>
-                    <a href="projects/project1.html">Untitled Video Game</a>
-                </h3>
-                <p>A multiplayer role-playing and strategy game.</p>
-            </div>
-            <div class="project">
-                <h3>
-                    <a href="projects/project2.html">WebGL-Driven Terrain Visualization of Mars and Lunar Datasets</a>
-                </h3>
-                <p>Research assistance for NASA Grant Project at Georgetown University.</p>
-            </div>
-            <div class="project">
-                <h3>
-                    <a href="projects/project3.html">Linux Scheduling</a>
-                </h3>
-                <p>Custom scheduling policy for Linux Kernel.</p>
-            </div>
+            <!-- Project cards will be generated dynamically by JavaScript -->
         </section>
 
 
@@ -55,7 +42,84 @@
             <h2>Contact Me</h2>
             <p>You can reach me at <a href="mailto:jackdangelo10@icloud.com">jackdangelo10@icloud.com</a></p>
         </section>
+
+        <div id="projectModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+        
     </main>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        const projects = [
+        {
+            title: "Untitled Video Game",
+            description: "A multiplayer role-playing and strategy game.",
+            link: "projects/project1.html",
+            icon: "fas fa-gamepad" // Example icon class
+        },
+        {
+            title: "WebGL-Driven Terrain Visualization of Mars and Lunar Datasets",
+            description: "Research assistance for NASA Grant Project at Georgetown University.",
+            link: "projects/project2.html",
+            icon: "fas fa-rocket" // Example icon class
+        },
+        {
+            title: "Linux Scheduling",
+            description: "Custom scheduling policy for Linux Kernel.",
+            link: "projects/project3.html",
+            icon: "fas fa-server" // Example icon class
+        }];
+
+        const projectsContainer = document.querySelector('#projects');
+        projects.forEach(project => {
+            const projectElement = document.createElement('div');
+            projectElement.classList.add('project');
+            projectElement.innerHTML = `
+                <div class="project-icon">
+                    <i class="${project.icon}"></i>
+                </div>
+                <h3><a href="${project.link}">${project.title}</a></h3>
+                <p>${project.description}</p>
+            `;
+            projectsContainer.appendChild(projectElement);
+        });
+
+    </script>
+
+    <style> 
+        footer {
+            background-color: #940e0e;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+            border-top: 4px solid #730b0b;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <footer>
+        <p>© 2024 Jack D'Angelo</p>
+    </footer>
+
+
 </body>
 </html>
 

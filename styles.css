@@ -5,28 +5,6 @@ body {
     box-sizing: border-box;
 }
 
-.carousel-images img,
-.carousel-videos video {
-    max-width: 70%; /* Adjust the width as needed */
-    height: auto;
-    display: block;
-    margin: 0 auto; /* Center the image/video */
-}
-
-.carousel-control {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-.carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
 header {
     background-color: #940e0e;
     color: white;
@@ -71,12 +49,6 @@ main {
     background-color: #f9f9f9;
 }
 
-.project {
-    margin-top: 20px;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    background-color: #fff;
-}
 
 footer {
     background-color: #333;
@@ -87,3 +59,287 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* NAME ANIMATION */
+
+header h1 {
+    position: relative;
+    display: inline-block; /* Ensures the h1 only takes up as much space as needed */
+    animation: fadeInGrow 3s ease;
+    transform-origin: center;
+    color: #fff; /* White text color */
+}
+
+@keyframes fadeInGrow {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* NAVIGATION BARS */
+
+nav {
+    display: flex;
+    justify-content: center; /* Centers the navigation bar */
+    margin-top: 20px; /* Adds some space between your name and the buttons */
+}
+
+nav ul {
+    list-style-type: none; /* Removes bullet points from the list */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px; /* Adds space between buttons */
+}
+
+nav ul li {
+    display: inline; /* Ensures the list items are inline */
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white; /* Button background color */
+    color: #940e0e; /* Text color */
+    text-decoration: none; /* Removes underline from links */
+    border-radius: 5px; /* Rounds the corners of the buttons */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    font-weight: bold; /* Bold text */
+}
+
+nav ul li a:hover {
+    background-color: rgb(228, 195, 195); /* Darker shade for hover effect */
+}
+
+/* PROJECT BOXES */
+
+.project {
+    background-color: #f8f9fa; /* Light background color */
+    border-radius: 10px; /* Rounds the corners */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Adds a transition effect */
+    font-family: 'Courier New', Courier, monospace; /* Changes the font to Courier or similar */
+}
+
+.project h3 a {
+    color: #940e0e; /* Sets the color of the project title */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold; /* Makes the project title bold */
+}
+
+.project h3 a:hover {
+    text-decoration: underline; /* Underlines the title on hover */
+}
+
+.project p {
+    margin-top: 10px;
+    color: #333; /* Dark text color for the description */
+}
+
+.project:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darkens shadow on hover */
+}
+
+/* MY PROJECTS SECTION */
+#projects {
+    background-color: #940e0e; /* Red background color */
+    padding: 40px 20px; /* Adds padding around the entire section */
+    border-radius: 15px; /* Rounds the corners of the container */
+    margin-bottom: 40px; /* Adds space below the section */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Adds a subtle shadow for depth */
+}
+
+#projects h2 {
+    color: white; /* Sets the "My Projects" text color to white */
+    font-size: 2em; /* Increases the font size of the heading */
+    text-align: center; /* Centers the heading text */
+    margin-bottom: 30px; /* Adds space below the heading */
+    font-weight: bold; /* Makes the heading bold */
+}
+
+#projects .project {
+    background-color: #f8f9fa; /* Keeps the light background for the individual project boxes */
+    border-radius: 10px; /* Rounds the corners of the project boxes */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Adds a transition effect */
+    font-family: 'Courier New', Courier, monospace; /* Changes the font to Courier or similar */
+}
+
+#projects .project h3 a {
+    color: #940e0e; /* Matches the project title color to the container's background */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold; /* Makes the project title bold */
+}
+
+#projects .project h3 a:hover {
+    text-decoration: underline; /* Underlines the title on hover */
+}
+
+#projects .project p {
+    margin-top: 10px;
+    color: #333; /* Dark text color for the description */
+}
+
+#projects .project:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darkens shadow on hover */
+}
+
+
+/* Add these styles to your existing CSS */
+
+/* Project Icon */
+#projects .project .project-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    color: rgba(148, 14, 14, 0.2); /* Subtle color matching the theme */
+    z-index: 0;
+}
+
+/* Project Background Gradient */
+#projects .project {
+    background-image: linear-gradient(135deg, rgba(148,14,14,0.1) 0%, rgba(148,14,14,0) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#projects .project h3,
+#projects .project p {
+    position: relative;
+    z-index: 1; /* Ensures text is above any background or icon */
+}
+
+/* Rest of your existing CSS for the projects */
+
+
+/* ABOUT ME SECTION */
+#landing {
+    position: relative;
+    background-image: url('images/background.jpeg'); /* Replace with the path to your photo */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the background image */
+    padding: 100px 20px; /* Adds padding to create space around the content */
+    border-radius: 15px; /* Rounds the corners of the section */
+    margin-bottom: 40px; /* Adds space below the section */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Adds a subtle shadow for depth */
+    color: rgb(0, 0, 0); /* Sets the text color to white */
+    font-weight: bold; /* Makes the project title bold */
+}
+
+.about-me-content {
+    background-color: rgba(255, 255, 255, 0.6); /* Adds a semi-transparent background to the text for readability */
+    padding: 20px;
+    border-radius: 10px; /* Rounds the corners of the content box */
+    max-width: 800px; /* Limits the width of the content box */
+    margin: 0 auto; /* Centers the content box */
+}
+
+#landing h2 {
+    font-size: 2em; /* Increases the font size of the heading */
+    text-align: center; /* Centers the heading text */
+    margin-bottom: 20px; /* Adds space below the heading */
+    font-weight: bold; /* Makes the heading bold */
+}
+
+#landing p {
+    font-family: 'Courier New', Courier, monospace; /* Changes the font to Courier or similar */
+    line-height: 1.6; /* Improves readability with line height */
+}
+
+
+/* CONTACT ME SECTION */
+#contact {
+    background-color: #940e0e; /* Red background color */
+    padding: 40px 20px; /* Adds padding around the section */
+    border-radius: 15px; /* Rounds the corners of the container */
+    margin-bottom: 40px; /* Adds space below the section */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Adds a subtle shadow for depth */
+    text-align: center; /* Centers the content */
+}
+
+#contact h2 {
+    color: white; /* White color for the heading */
+    font-size: 2em; /* Increases the font size of the heading */
+    margin-bottom: 20px; /* Adds space below the heading */
+    font-weight: bold; /* Makes the heading bold */
+}
+
+#contact p {
+    color: white; /* White color for the text */
+    font-family: 'Courier New', Courier, monospace; /* Changes the font to Courier or similar */
+    line-height: 1.6; /* Improves readability with line height */
+}
+
+#contact a {
+    color: white; /* White color for the link */
+    text-decoration: underline; /* Underlines the link */
+}
+
+#contact a:hover {
+    text-decoration: none; /* Removes underline on hover for a subtle effect */
+}
+
+
+/* CAROUSEL */
+.carousel-images img,
+.carousel-videos video {
+    width: 100%;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-in transition */
+}
+
+.carousel-images img.show,
+.carousel-videos video.show {
+    display: block;
+    opacity: 1;
+}
+
