@@ -231,9 +231,6 @@ nav ul li a:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darkens shadow on hover */
 }
 
-
-/* Add these styles to your existing CSS */
-
 /* Project Icon */
 #projects .project .project-icon {
     position: absolute;
@@ -256,9 +253,6 @@ nav ul li a:hover {
     position: relative;
     z-index: 1; /* Ensures text is above any background or icon */
 }
-
-/* Rest of your existing CSS for the projects */
-
 
 /* ABOUT ME SECTION */
 #landing {
@@ -294,7 +288,6 @@ nav ul li a:hover {
     line-height: 1.6; /* Improves readability with line height */
 }
 
-
 /* CONTACT ME SECTION */
 #contact {
     background-color: #940e0e; /* Red background color */
@@ -327,7 +320,6 @@ nav ul li a:hover {
     text-decoration: none; /* Removes underline on hover for a subtle effect */
 }
 
-
 /* CAROUSEL */
 .carousel-images img,
 .carousel-videos video {
@@ -343,3 +335,85 @@ nav ul li a:hover {
     opacity: 1;
 }
 
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+@media (max-width: 768px) {
+    /* Adjust header text size for smaller screens */
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    /* Stack navigation items vertically on mobile */
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    /* Adjust padding for sections on smaller screens */
+    #landing,
+    #projects,
+    #contact {
+        padding: 20px 10px;
+    }
+
+    /* Reduce the padding and font sizes in project boxes */
+    .project {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+
+    /* Reduce padding in the about-me section */
+    .about-me-content {
+        padding: 15px;
+    }
+
+    /* Ensure images and videos are not too large on mobile */
+    .carousel-images img,
+    .carousel-videos video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Adjust footer positioning for mobile */
+    footer {
+        padding: 10px;
+        position: relative;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further reduce the header text size for very small screens */
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    /* Adjust padding and margin for very small screens */
+    nav ul {
+        gap: 5px;
+    }
+
+    #landing,
+    #projects,
+    #contact {
+        padding: 10px;
+    }
+
+    .project {
+        padding: 10px;
+        font-size: 0.8em;
+    }
+
+    .about-me-content {
+        padding: 10px;
+    }
+
+    footer {
+        padding: 8px;
+    }
+}
